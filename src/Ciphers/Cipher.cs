@@ -15,13 +15,17 @@ namespace ClassicalCipherSolver.Ciphers
         public float[] SampleVariances
         { get; protected set; }
 
+        public float[,] DistancesFromMeans
+        { get; protected set; }
+
+        public string[] EnglishTexts
+        { get; protected set; } = { Properties.Resources.Gutenberg0, Properties.Resources.Gutenberg1, Properties.Resources.Gutenberg2, Properties.Resources.Gutenberg3, Properties.Resources.Gutenberg4 };
+
         public abstract string Encrypt(string plaintext, T key);
 
         public abstract Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker);
 
         public abstract string Decrypt(string ciphertext, T key);
-
-        protected string[] englishTexts = { Properties.Resources.Gutenberg0, Properties.Resources.Gutenberg1, Properties.Resources.Gutenberg2, Properties.Resources.Gutenberg3, Properties.Resources.Gutenberg4 };
 
         protected static int Modulo(int a, int b)
         {
@@ -38,8 +42,9 @@ namespace ClassicalCipherSolver.Ciphers
             int numberOfStatsTracked = new Ciphertext("").GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray().Length;
             Means = new float[numberOfStatsTracked];
             SampleVariances = new float[numberOfStatsTracked];
+            DistancesFromMeans = new float[numberOfStatsTracked, EnglishTexts.Length];
 
-            foreach (string text in englishTexts)
+            foreach (string text in EnglishTexts)
             {
                 Ciphertext result = new(Encrypt(text, key));
 
@@ -51,22 +56,25 @@ namespace ClassicalCipherSolver.Ciphers
             }
             for (int i = 0; i < Means.Length; ++i)
             {
-                Means[i] /= englishTexts.Length;
+                Means[i] /= EnglishTexts.Length;
             }
 
-            foreach (string text in englishTexts)
+            for (int i = 0; i < EnglishTexts.Length; ++i)
             {
-                Ciphertext result = new(Encrypt(text, key));
+                Ciphertext result = new(Encrypt(EnglishTexts[i], key));
 
                 PropertyInfo[] properties = result.GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray();
-                for (int i = 0; i < properties.Length; ++i)
+                for (int j = 0; j < properties.Length; ++j)
                 {
-                    SampleVariances[i] += (float)Math.Pow(Convert.ToSingle(properties[i].GetValue(result)) - Means[i], 2);
+                    float observation = Convert.ToSingle(properties[j].GetValue(result));
+                    DistancesFromMeans[j, i] = observation - Means[j];
+                    SampleVariances[j] += (float)Math.Pow(observation - Means[j], 2);
                 }
             }
+
             for (int i = 0; i < SampleVariances.Length; ++i)
             {
-                SampleVariances[i] /= (englishTexts.Length - 1);
+                SampleVariances[i] /= (EnglishTexts.Length - 1);
             }
         }
     }

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace ClassicalCipherSolver
+﻿namespace ClassicalCipherSolver
 {
     internal class Plaintext : Ciphertext
     {

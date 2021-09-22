@@ -1,5 +1,6 @@
 ﻿using ClassicalCipherSolver.Ciphers;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -50,11 +51,34 @@ namespace ClassicalCipherSolver
                     sampleVariance += cipher.SampleVariances[i];
                 }
 
+                int[] statIndices = Enumerable.Range(0, stats.Length).ToArray();
+
+                foreach (IEnumerable<int> pair in GetKCombinations<int>(statIndices, 2))
+                {
+                    for (int observation = 0; observation < cipher.EnglishTexts.Length; ++observation)
+                    {
+                        float covarianceAddition = 1f;
+
+                        foreach (int choice in pair)
+                        {
+                            covarianceAddition *= cipher.DistancesFromMeans[choice, observation];
+                        }
+
+                        sampleVariance += covarianceAddition / (cipher.EnglishTexts.Length - 1);
+                    }
+                }
+
                 float standardDeviationsFromTheMean = Math.Abs(differenceFromMean / (float)Math.Sqrt(sampleVariance));
 
-                Console.WriteLine($"{cipherType.Name} - {standardDeviationsFromTheMean}");
+                Console.WriteLine($"{cipherType.Name} - {standardDeviationsFromTheMean} standard deviations from the mean.");
 
                 Console.WriteLine(cipher.DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
+
+                static IEnumerable<IEnumerable<T>> GetKCombinations<T>(IEnumerable<T> list, int length) where T : IComparable
+                {
+                    if (length == 1) return list.Select(t => new T[] { t });
+                    return GetKCombinations(list, length - 1).SelectMany(t => list.Where(o => o.CompareTo(t.Last()) > 0), (t1, t2) => t1.Concat(new T[] { t2 }));
+                }
             }
         }
     }

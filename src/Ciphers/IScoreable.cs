@@ -11,6 +11,12 @@
         float[] SampleVariances
         { get; }
 
+        float[,] DistancesFromMeans
+        { get; }
+
+        string[] EnglishTexts
+        { get; }
+
         Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker);
     }
 }
