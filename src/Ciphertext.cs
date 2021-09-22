@@ -17,17 +17,19 @@ namespace ClassicalCipherSolver
 
         protected static float IndexOfCoincidence(string ciphertext)
         {
+            if (ciphertext.Length < 2) return 0;
+
             ciphertext = ciphertext.TrimForAnalysis();
-            float ic = 0f;
+            long ic = 0;
 
             foreach (char c in new HashSet<char>(ciphertext))
             {
-                int n_i = ciphertext.Where(x => x == c).Count();
+                long n_i = ciphertext.Where(x => x == c).Count();
 
                 ic += n_i * (n_i - 1);
             }
 
-            return ic / (ciphertext.Length * (ciphertext.Length - 1));
+            return (float)(ic / ((decimal)ciphertext.Length * (ciphertext.Length - 1)));
         }
     }
 }

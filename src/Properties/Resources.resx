@@ -121,6 +121,21 @@
   <data name="Bigrams" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bigrams.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="Gutenberg0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gutenberg0.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Gutenberg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gutenberg1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Gutenberg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gutenberg2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Gutenberg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gutenberg3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Gutenberg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gutenberg4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ngrams_txt_README" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ngrams.txt.README.md;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

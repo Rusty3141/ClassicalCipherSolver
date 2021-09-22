@@ -11,24 +11,24 @@ namespace ClassicalCipherSolver.Ciphers
             protected set;
         }
 
-        public Caesar(Ciphertext _text)
+        public Caesar()
         {
-            text = _text.Text;
+            SetStats(7);
         }
 
-        public override string Encrypt(int key)
+        public override string Encrypt(string plaintext, int key)
         {
-            return new string(text.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 + key, 26) + 65) : x).ToArray());
+            return new string(plaintext.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 + key, 26) + 65) : x).ToArray());
         }
 
-        public override Plaintext DecryptAutomatically(FitnessChecker fitnessChecker)
+        public override Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker)
         {
             string maximum = string.Empty;
             float maximumScore = float.NegativeInfinity;
 
             for (int i = 0; i < 26; ++i)
             {
-                string result = Decrypt(i);
+                string result = Decrypt(ciphertext, i);
                 float score = fitnessChecker.Evaluate(result.TrimForAnalysis());
 
                 if (score > maximumScore)
@@ -41,9 +41,9 @@ namespace ClassicalCipherSolver.Ciphers
             return new Plaintext(maximum);
         }
 
-        public override string Decrypt(int key)
+        public override string Decrypt(string ciphertext, int key)
         {
-            return new string(text.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 - key, 26) + 65) : x).ToArray());
+            return new string(ciphertext.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 - key, 26) + 65) : x).ToArray());
         }
     }
 }

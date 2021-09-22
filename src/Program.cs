@@ -35,8 +35,8 @@ namespace ClassicalCipherSolver
             }
             Console.WriteLine();
 
-            Caesar cs = new(ciphertext);
-            Console.WriteLine(cs.DecryptAutomatically(fitnessChecker).Text);
+            Caesar cs = new();
+            Console.WriteLine(cs.DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
         }
     }
 }

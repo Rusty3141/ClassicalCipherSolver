@@ -100,11 +100,95 @@ namespace ClassicalCipherSolver.Properties {
         ///HI 27495342
         ///NE 27331675
         ///ME 27237733
-        ///DE  [rest of string was truncated]&quot;;.
+        ///DE 27029835
+        ///CO 26737101
+        ///TA 26147593
+        ///EC 257 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Bigrams {
             get {
                 return ResourceManager.GetString("Bigrams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Project Gutenberg eBook of Alice’s Adventures in Wonderland, by Lewis Carroll
+        ///
+        ///This eBook is for the use of anyone anywhere in the United States and
+        ///most other parts of the world at no cost and with almost no restrictions
+        ///whatsoever. You may copy it, give it away or re-use it under the terms
+        ///of the Project Gutenberg License included with this eBook or online at
+        ///www.gutenberg.org. If you are not located in the United States, you
+        ///will have to check the laws of the country where you are located befo [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Gutenberg0 {
+            get {
+                return ResourceManager.GetString("Gutenberg0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Project Gutenberg EBook of The Scarlet Letter, by Nathaniel Hawthorne
+        ///
+        ///This eBook is for the use of anyone anywhere in the United States and most
+        ///other parts of the world at no cost and with almost no restrictions
+        ///whatsoever.  You may copy it, give it away or re-use it under the terms of
+        ///the Project Gutenberg License included with this eBook or online at
+        ///www.gutenberg.org.  If you are not located in the United States, you&apos;ll have
+        ///to check the laws of the country where you are located before using [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Gutenberg1 {
+            get {
+                return ResourceManager.GetString("Gutenberg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Project Gutenberg eBook of Pride and Prejudice, by Jane Austen
+        ///
+        ///This eBook is for the use of anyone anywhere in the United States and
+        ///most other parts of the world at no cost and with almost no restrictions
+        ///whatsoever. You may copy it, give it away or re-use it under the terms
+        ///of the Project Gutenberg License included with this eBook or online at
+        ///www.gutenberg.org. If you are not located in the United States, you
+        ///will have to check the laws of the country where you are located before
+        ///using this  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Gutenberg2 {
+            get {
+                return ResourceManager.GetString("Gutenberg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Project Gutenberg eBook of Frankenstein, by Mary Wollstonecraft (Godwin) Shelley
+        ///
+        ///This eBook is for the use of anyone anywhere in the United States and
+        ///most other parts of the world at no cost and with almost no restrictions
+        ///whatsoever. You may copy it, give it away or re-use it under the terms
+        ///of the Project Gutenberg License included with this eBook or online at
+        ///www.gutenberg.org. If you are not located in the United States, you
+        ///will have to check the laws of the country where you are located b [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Gutenberg3 {
+            get {
+                return ResourceManager.GetString("Gutenberg3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Project Gutenberg eBook of The Strange Case Of Dr. Jekyll And Mr. Hyde, by Robert Louis Stevenson
+        ///
+        ///This eBook is for the use of anyone anywhere in the United States and
+        ///most other parts of the world at no cost and with almost no restrictions
+        ///whatsoever. You may copy it, give it away or re-use it under the terms
+        ///of the Project Gutenberg License included with this eBook or online at
+        ///www.gutenberg.org. If you are not located in the United States, you
+        ///will have to check the laws of the country where  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Gutenberg4 {
+            get {
+                return ResourceManager.GetString("Gutenberg4", resourceCulture);
             }
         }
         
@@ -155,7 +239,10 @@ namespace ClassicalCipherSolver.Properties {
         ///THEF 3873133
         ///THEY 3809433
         ///HAVE 3735139
-        ///EDTH  [rest of string was truncated]&quot;;.
+        ///EDTH 3699013
+        ///INGA 3675933
+        ///NDTH 3619148
+        ///TH [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Quadgrams {
             get {
@@ -201,7 +288,10 @@ namespace ClassicalCipherSolver.Properties {
         ///WAS 8640940
         ///SIN 8629893
         ///STO 8556837
-        ///TTH 8476 [rest of string was truncated]&quot;;.
+        ///TTH 8476119
+        ///STA 8399345
+        ///THI 8363593
+        ///TIN 82180 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Trigrams {
             get {
