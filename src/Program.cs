@@ -25,8 +25,6 @@ namespace ClassicalCipherSolver
             Ciphertext ciphertext = new(input);
 
             Console.Clear();
-            Console.WriteLine("Provided ciphertext: ");
-            Console.WriteLine(ciphertext.Text);
 
             foreach (PropertyInfo ciphertextStat in ciphertext.GetType().GetProperties())
             {
@@ -35,9 +33,10 @@ namespace ClassicalCipherSolver
                     Console.WriteLine($"{ciphertextStat.Name}: {ciphertextStat.GetValue(ciphertext)}");
                 }
             }
+            Console.WriteLine();
 
             Caesar cs = new(ciphertext);
-            Console.WriteLine(cs.DecryptAutomatically(fitnessChecker));
+            Console.WriteLine(cs.DecryptAutomatically(fitnessChecker).Text);
         }
     }
 }

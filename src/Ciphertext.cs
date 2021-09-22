@@ -5,8 +5,8 @@ namespace ClassicalCipherSolver
 {
     internal class Ciphertext
     {
-        public string Text { get; private set; }
-        public float IoC { get; private set; }
+        public string Text { get; protected set; }
+        public float IoC { get; protected set; }
 
         public Ciphertext(string ciphertext)
         {
@@ -15,7 +15,7 @@ namespace ClassicalCipherSolver
             IoC = IndexOfCoincidence(Text);
         }
 
-        private static float IndexOfCoincidence(string ciphertext)
+        protected static float IndexOfCoincidence(string ciphertext)
         {
             ciphertext = ciphertext.TrimForAnalysis();
             float ic = 0f;

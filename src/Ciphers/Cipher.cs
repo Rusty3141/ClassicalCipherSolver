@@ -10,7 +10,7 @@
 
         public abstract string Encrypt(T key);
 
-        public abstract string DecryptAutomatically(FitnessChecker fitnessChecker);
+        public abstract Plaintext DecryptAutomatically(FitnessChecker fitnessChecker);
 
         public abstract string Decrypt(T key);
 

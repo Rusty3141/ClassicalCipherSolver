@@ -21,7 +21,7 @@ namespace ClassicalCipherSolver.Ciphers
             return new string(text.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 + key, 26) + 65) : x).ToArray());
         }
 
-        public override string DecryptAutomatically(FitnessChecker fitnessChecker)
+        public override Plaintext DecryptAutomatically(FitnessChecker fitnessChecker)
         {
             string maximum = string.Empty;
             float maximumScore = float.NegativeInfinity;
@@ -38,7 +38,7 @@ namespace ClassicalCipherSolver.Ciphers
                 }
             }
 
-            return maximum;
+            return new Plaintext(maximum);
         }
 
         public override string Decrypt(int key)
