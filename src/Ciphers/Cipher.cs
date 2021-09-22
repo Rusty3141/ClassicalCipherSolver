@@ -4,25 +4,16 @@ using System.Reflection;
 
 namespace ClassicalCipherSolver.Ciphers
 {
-    internal abstract class Cipher<T>
+    internal abstract class Cipher<T> : IScoreable
     {
-        public virtual float CandidateMatch
-        {
-            get;
-            protected set;
-        }
+        public float CandidateMatch
+        { get; protected set; }
 
         public float[] Means
-        {
-            get;
-            protected set;
-        }
+        { get; protected set; }
 
         public float[] SampleVariances
-        {
-            get;
-            protected set;
-        }
+        { get; protected set; }
 
         public abstract string Encrypt(string plaintext, T key);
 

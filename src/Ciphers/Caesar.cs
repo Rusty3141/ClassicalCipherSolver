@@ -3,14 +3,8 @@ using System.Linq;
 
 namespace ClassicalCipherSolver.Ciphers
 {
-    internal class Caesar : Cipher<int>
+    internal sealed class Caesar : Cipher<int>
     {
-        public override float CandidateMatch
-        {
-            get;
-            protected set;
-        }
-
         public Caesar()
         {
             SetStats(7);
