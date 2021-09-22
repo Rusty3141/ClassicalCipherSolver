@@ -70,7 +70,7 @@ namespace ClassicalCipherSolver
 
                 float standardDeviationsFromTheMean = Math.Abs(differenceFromMean / (float)Math.Sqrt(sampleVariance));
 
-                Console.WriteLine($"{cipherType.Name} - {standardDeviationsFromTheMean} standard deviations from the mean.");
+                Console.WriteLine($"{cipherType.Name} - {standardDeviationsFromTheMean} standard deviations from the mean ({Math.Round(100 - 100 * ZScoreToConfidence(standardDeviationsFromTheMean), 1)}% confidence in cipher).");
 
                 Console.WriteLine(cipher.DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
 
@@ -79,6 +79,33 @@ namespace ClassicalCipherSolver
                     if (length == 1) return list.Select(t => new T[] { t });
                     return GetKCombinations(list, length - 1).SelectMany(t => list.Where(o => o.CompareTo(t.Last()) > 0), (t1, t2) => t1.Concat(new T[] { t2 }));
                 }
+            }
+
+            static float ZScoreToConfidence(float zScore)
+            {
+                float Phi(float z)
+                {
+                    // Via. https://www.johndcook.com/blog/csharp_phi/
+
+                    double a1 = 0.254829592;
+                    double a2 = -0.284496736;
+                    double a3 = 1.421413741;
+                    double a4 = -1.453152027;
+                    double a5 = 1.061405429;
+                    double p = 0.3275911;
+
+                    int sign = 1;
+                    if (z < 0)
+                        sign = -1;
+                    z = (float)Math.Abs(z) / (float)Math.Sqrt(2.0);
+
+                    double t = 1.0 / (1.0 + p * z);
+                    double y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.Exp(-z * z);
+
+                    return 0.5f * (float)(1.0 + sign * y);
+                }
+
+                return (2 * Phi(zScore) - 1);
             }
         }
     }

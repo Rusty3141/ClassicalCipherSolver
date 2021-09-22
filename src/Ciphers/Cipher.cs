@@ -6,9 +6,6 @@ namespace ClassicalCipherSolver.Ciphers
 {
     internal abstract class Cipher<T> : IScoreable
     {
-        public float CandidateMatch
-        { get; protected set; }
-
         public float[] Means
         { get; protected set; }
 

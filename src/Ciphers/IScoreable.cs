@@ -2,9 +2,6 @@
 {
     internal interface IScoreable
     {
-        float CandidateMatch
-        { get; }
-
         float[] Means
         { get; }
 
