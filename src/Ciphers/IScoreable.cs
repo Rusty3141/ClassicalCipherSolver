@@ -14,6 +14,9 @@
         string[] EnglishTexts
         { get; }
 
+        float CandidateStandardDeviationsFromSampleMean
+        { get; set; }
+
         Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker);
     }
 }

@@ -36,19 +36,22 @@ namespace ClassicalCipherSolver
             }
             Console.WriteLine();
 
-            Type[] ciphers = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.IsClass && !x.IsAbstract && !x.IsInterface && typeof(IScoreable).IsAssignableFrom(x)).ToArray();
+            Type[] cipherTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.IsClass && !x.IsAbstract && !x.IsInterface && typeof(IScoreable).IsAssignableFrom(x)).ToArray();
 
-            foreach (Type cipherType in ciphers)
+            IScoreable[] ciphers = new IScoreable[cipherTypes.Length];
+
+            for (int i = 0; i < cipherTypes.Length; ++i)
             {
-                IScoreable cipher = (IScoreable)Activator.CreateInstance(cipherType);
+                IScoreable cipher = (IScoreable)Activator.CreateInstance(cipherTypes[i]);
+                ciphers[i] = cipher;
 
                 float differenceFromMean = 0f;
                 float sampleVariance = 0f;
 
-                for (int i = 0; i < stats.Length; ++i)
+                for (int j = 0; j < stats.Length; ++j)
                 {
-                    differenceFromMean += stats[i] - cipher.Means[i];
-                    sampleVariance += cipher.SampleVariances[i];
+                    differenceFromMean += stats[j] - cipher.Means[j];
+                    sampleVariance += cipher.SampleVariances[j];
                 }
 
                 int[] statIndices = Enumerable.Range(0, stats.Length).ToArray();
@@ -68,17 +71,22 @@ namespace ClassicalCipherSolver
                     }
                 }
 
-                float standardDeviationsFromTheMean = Math.Abs(differenceFromMean / (float)Math.Sqrt(sampleVariance));
-
-                Console.WriteLine($"{cipherType.Name} - {standardDeviationsFromTheMean} standard deviations from the mean ({Math.Round(100 - 100 * ZScoreToConfidence(standardDeviationsFromTheMean), 1)}% confidence in cipher).");
-
-                Console.WriteLine(cipher.DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
+                cipher.CandidateStandardDeviationsFromSampleMean = Math.Abs(differenceFromMean / (float)Math.Sqrt(sampleVariance));
 
                 static IEnumerable<IEnumerable<T>> GetKCombinations<T>(IEnumerable<T> list, int length) where T : IComparable
                 {
                     if (length == 1) return list.Select(t => new T[] { t });
                     return GetKCombinations(list, length - 1).SelectMany(t => list.Where(o => o.CompareTo(t.Last()) > 0), (t1, t2) => t1.Concat(new T[] { t2 }));
                 }
+            }
+
+            Array.Sort(ciphers, delegate (IScoreable a, IScoreable b) { return a.CandidateStandardDeviationsFromSampleMean.CompareTo(b.CandidateStandardDeviationsFromSampleMean); });
+
+            for (int i = 0; i < ciphers.Length; ++i)
+            {
+                Console.WriteLine($"{ciphers[i].GetType().Name} - {ciphers[i].CandidateStandardDeviationsFromSampleMean} standard deviations from the mean ({Math.Round(100 - 100 * ZScoreToConfidence(ciphers[i].CandidateStandardDeviationsFromSampleMean), 1)}% confidence in cipher).");
+
+                Console.WriteLine(ciphers[i].DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
             }
 
             static float ZScoreToConfidence(float zScore)
@@ -94,9 +102,7 @@ namespace ClassicalCipherSolver
                     double a5 = 1.061405429;
                     double p = 0.3275911;
 
-                    int sign = 1;
-                    if (z < 0)
-                        sign = -1;
+                    int sign = z < 0 ? -1 : 1;
                     z = (float)Math.Abs(z) / (float)Math.Sqrt(2.0);
 
                     double t = 1.0 / (1.0 + p * z);

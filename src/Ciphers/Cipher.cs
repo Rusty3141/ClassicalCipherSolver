@@ -18,6 +18,9 @@ namespace ClassicalCipherSolver.Ciphers
         public string[] EnglishTexts
         { get; protected set; } = { Properties.Resources.Gutenberg0, Properties.Resources.Gutenberg1, Properties.Resources.Gutenberg2, Properties.Resources.Gutenberg3, Properties.Resources.Gutenberg4 };
 
+        public float CandidateStandardDeviationsFromSampleMean
+        { get; set; }
+
         public abstract string Encrypt(string plaintext, T key);
 
         public abstract Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker);
