@@ -36,7 +36,7 @@ namespace ClassicalCipherSolver.Ciphers
 
         public override string Decrypt(string ciphertext, int key)
         {
-            return new string(ciphertext.ToUpper().Select(x => char.IsLetter(x) ? (char)(Modulo(x - 65 - key, 26) + 65) : x).ToArray());
+            return Encrypt(ciphertext, -key);
         }
     }
 }

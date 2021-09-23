@@ -34,7 +34,6 @@ namespace ClassicalCipherSolver
                 stats[i] = (float)properties[i].GetValue(ciphertext);
                 Console.WriteLine($"{properties[i].Name}: {stats[i]}");
             }
-            Console.WriteLine();
 
             Type[] cipherTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.IsClass && !x.IsAbstract && !x.IsInterface && typeof(IScoreable).IsAssignableFrom(x)).ToArray();
 
@@ -84,6 +83,7 @@ namespace ClassicalCipherSolver
 
             for (int i = 0; i < ciphers.Length; ++i)
             {
+                Console.WriteLine();
                 Console.WriteLine($"{ciphers[i].GetType().Name} - {ciphers[i].CandidateStandardDeviationsFromSampleMean} standard deviations from the mean ({Math.Round(100 - 100 * ZScoreToConfidence(ciphers[i].CandidateStandardDeviationsFromSampleMean), 1)}% confidence in cipher).");
 
                 Console.WriteLine(ciphers[i].DecryptAutomatically(ciphertext.Text, fitnessChecker).Text);
