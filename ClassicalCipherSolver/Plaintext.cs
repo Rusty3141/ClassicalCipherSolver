@@ -1,6 +1,6 @@
 ﻿namespace ClassicalCipherSolver
 {
-    internal class Plaintext : Ciphertext
+    public class Plaintext : Ciphertext
     {
         public Plaintext(string plaintext) : base(plaintext)
         {

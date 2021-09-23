@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ClassicalCipherSolver
 {
-    internal class Ciphertext
+    public class Ciphertext
     {
         public string Text { get; protected set; }
         public float IoC { get; protected set; }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassicalCipherSolver", "src\ClassicalCipherSolver.csproj", "{44A24DA8-040D-4546-A357-E6E38BC9D8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassicalCipherSolver", "ClassicalCipherSolver\ClassicalCipherSolver.csproj", "{44A24DA8-040D-4546-A357-E6E38BC9D8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassicalCipherSolver.UnitTests", "ClassicalCipherSolver.UnitTests\ClassicalCipherSolver.UnitTests.csproj", "{9DAAE721-08EF-45AF-A96B-6A9F00AA81AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{44A24DA8-040D-4546-A357-E6E38BC9D8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A24DA8-040D-4546-A357-E6E38BC9D8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A24DA8-040D-4546-A357-E6E38BC9D8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DAAE721-08EF-45AF-A96B-6A9F00AA81AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAAE721-08EF-45AF-A96B-6A9F00AA81AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAAE721-08EF-45AF-A96B-6A9F00AA81AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAAE721-08EF-45AF-A96B-6A9F00AA81AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

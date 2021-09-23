@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace ClassicalCipherSolver.Ciphers
 {
-    internal abstract class Cipher<T> : IScoreable
+    public abstract class Cipher<T> : IScoreable
     {
         public float[] Means
         { get; protected set; }
@@ -44,14 +44,16 @@ namespace ClassicalCipherSolver.Ciphers
             SampleVariances = new float[numberOfStatsTracked];
             DistancesFromMeans = new float[numberOfStatsTracked, EnglishTexts.Length];
 
-            foreach (string text in EnglishTexts)
-            {
-                Ciphertext result = new(Encrypt(text, key));
+            Ciphertext[] results = new Ciphertext[EnglishTexts.Length];
 
-                PropertyInfo[] properties = result.GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray();
-                for (int i = 0; i < properties.Length; ++i)
+            for (int i = 0; i < EnglishTexts.Length; ++i)
+            {
+                results[i] = new Ciphertext(Encrypt(EnglishTexts[i].ToUpper(), key));
+
+                PropertyInfo[] properties = results[i].GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray();
+                for (int j = 0; j < properties.Length; ++j)
                 {
-                    Means[i] += Convert.ToSingle(properties[i].GetValue(result));
+                    Means[j] += Convert.ToSingle(properties[j].GetValue(results[i]));
                 }
             }
             for (int i = 0; i < Means.Length; ++i)
@@ -61,17 +63,14 @@ namespace ClassicalCipherSolver.Ciphers
 
             for (int i = 0; i < EnglishTexts.Length; ++i)
             {
-                Ciphertext result = new(Encrypt(EnglishTexts[i], key));
-
-                PropertyInfo[] properties = result.GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray();
+                PropertyInfo[] properties = results[i].GetType().GetProperties().Where(x => x.PropertyType == typeof(float)).ToArray();
                 for (int j = 0; j < properties.Length; ++j)
                 {
-                    float observation = Convert.ToSingle(properties[j].GetValue(result));
+                    float observation = Convert.ToSingle(properties[j].GetValue(results[i]));
                     DistancesFromMeans[j, i] = observation - Means[j];
                     SampleVariances[j] += (float)Math.Pow(observation - Means[j], 2);
                 }
             }
-
             for (int i = 0; i < SampleVariances.Length; ++i)
             {
                 SampleVariances[i] /= (EnglishTexts.Length - 1);

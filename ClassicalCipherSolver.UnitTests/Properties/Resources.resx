@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExampleKeywordCiphertext" xml:space="preserve">
+    <value>STCG KBIYT MVYUTYZ,
+V JGKHJ JUCJ PDK CBS JUT OCZVYP CJ JVGEVJQKOTG CGT CYY MTYY CBS JUCJ PDK TBWDPTS JUT HXTJIUTH V HTBJ PDK YCHJ MTTX. V UCLT TBIYDHTS ZP ZDHJ GTITBJ VZEGTHHVDBH DO JUT ATCKJVOKY, VO HDZTMUCJ HJCGX YCBSHICET VB BDGODYX. V UDET CBS ATYVTLT JUCJ PDK MVYY OVBS JUTZ DO RGTCJ VBJTGTHJ. JUT OYCJ CBS DETB OVTYSH UCLT C HECGJCB ATCKJP EKBIJKCJTS AP WKHJ C OTM YCBSZCGXH DO SVHJVBIJVDB, AKJ JUTVG VHDYCJVDB ZCXTH JUTZ HJCBS DKJ TLTB ZDGT CBS VBIGTCHTH JUTVG VBJTGTHJ.
+DKG UDHJH UCLT ATTB ZDHJ CRGTTCAYT CBS TLTB JUT YDICY EDYVIT ODGIT UCLT ATTB CH CIIDZZDSCJVBR CH PDK HKRRTHJTS JUTP MDKYS AT. JUT YDICY IDBHJCAYT HTTZTS ZDHJ VBJTGTHJTS VB DKG EUDJDRGCEUVI UDAAP, AKJ UT CEETCGTS JD AT IDBJTBJ MVJU JUT TNEYCBCJVDB DO DKG VBJTGTHJ VB JUTVG ATCKJVOKY IDKBJGPHVST CBS LVYYCRTH. UT MCH CYHD LTGP CEEGTIVCJVLT DO DKG GDKRU HXTJIUTH DO JUTVG HJGVXVBR YCBSHICET, JUDKRU UT SVS HTTZ HKGEGVHTS CJ JUT BKZATG DO SGCMVBRH MT UCLT ZCST DO JUT OVTYSH CGDKBS ICVHJDG HJ TSZKBS, HKRRTHJVBR JUCJ VJH HVRBVOVICBIT VH BDJ MVSTYP XBDMB.
+JUT YDICY HIDKJZCHJTG CRGTTS JD ECHH JUVH ZTHHCRT JD PDK CBS UCH CYHD CGGCBRTS ODG DKG ODGMCGS JGCLTY. MT MVYY UTCS BTNJ JD YDBSDB JD ZTTJ MVJU ZP IDKHVB BVXDYCKH ATODGT EGTECGVBR ODG JUT HTIDBS HJCRT DO DKG YVJJYT CSLTBJKGT. VO PDK UCLT CBP OKGJUTG GTFKTHJH ODG VBODGZCJVDB DG CSSVJVDBCY SGCMVBRH VB JUVH TNJGCDGSVBCGP ECGJ DO JUT MDGYS JUTB EYTCHT SD ZCXT HKGT JD YTJ ZT XBDM ATODGT MT STECGJ.
+YTJ ZT OVBVHU MVJU C YVJJYT EKQQYT ODG PDK. ICB PDK OVBS CB TVRUJ YTJJTG TBRYVHU MDGS MUVIU PDK ICB IUCBRT AP CYJTGVBR JUT DGSTG DO VJH YTJJTGH JD EGDSKIT ODKG DJUTG SVOOTGTBJ TBRYVHU MDGSH?
+PDKGH HVBITGTYP,
+DJJD</value>
+  </data>
+  <data name="ExamplePlaintext" xml:space="preserve">
+    <value>dear uncle wilhelm,
+i trust that you and the family at tirpitzufer are all well and that you enjoyed the sketches i sent you last week. i have enclosed my most recent impressions of the beautiful, if somewhat stark landscape in norfolk. i hope and believe that you will find them of great interest. the flat and open fields have a spartan beauty punctuated by just a few landmarks of distinction, but their isolation makes them stand out even more and increases their interest.
+our hosts have been most agreeable and even the local police force have been as accommodating as you suggested they would be. the local constable seemed most interested in our photographic hobby, but he appeared to be content with the explanation of our interest in their beautiful countryside and villages. he was also very appreciative of our rough sketches of their striking landscape, though he did seem surprised at the number of drawings we have made of the fields around caistor st edmund, suggesting that its significance is not widely known.
+the local scoutmaster agreed to pass this message to you and has also arranged for our forward travel. we will head next to london to meet with my cousin nikolaus before preparing for the second stage of our little adventure. if you have any further requests for information or additional drawings in this extraordinary part of the world then please do make sure to let me know before we depart.
+let me finish with a little puzzle for you. can you find an eight letter english word which you can change by altering the order of its letters to produce four other different english words?
+yours sincerely,
+otto</value>
+  </data>
+</root>

@@ -4,7 +4,7 @@ using System.IO;
 
 namespace ClassicalCipherSolver
 {
-    internal class FitnessChecker
+    public class FitnessChecker
     {
         private readonly int _ngramWidth;
         private readonly float _baseScore;
