@@ -12,7 +12,7 @@ namespace ClassicalCipherSolver.Ciphers
 
         public override string Encrypt(string plaintext, int key)
         {
-            return new string(plaintext.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 + key, 26) + 65) : x).ToArray());
+            return new string(plaintext.Select(x => char.IsLetter(x) ? (char)(Modulo(x - 65 + key, 26) + 65) : x).ToArray());
         }
 
         public override Plaintext DecryptAutomatically(string ciphertext, FitnessChecker fitnessChecker)
@@ -37,7 +37,7 @@ namespace ClassicalCipherSolver.Ciphers
 
         public override string Decrypt(string ciphertext, int key)
         {
-            return new string(ciphertext.Select(x => Char.IsLetter(x) ? (char)(Modulo(x - 65 - key, 26) + 65) : x).ToArray());
+            return new string(ciphertext.Select(x => char.IsLetter(x) ? (char)(Modulo(x - 65 - key, 26) + 65) : x).ToArray());
         }
     }
 }

@@ -91,7 +91,7 @@ namespace ClassicalCipherSolver
 
             static float ZScoreToConfidence(float zScore)
             {
-                float Phi(float z)
+                static float Phi(float z)
                 {
                     // Via. https://www.johndcook.com/blog/csharp_phi/
 
